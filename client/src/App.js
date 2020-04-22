@@ -7,15 +7,15 @@ import axios from 'axios';
 function App() {
   const [employees, setEmployees] = useState([]);
 
-  const [filterText, setFilterText] = useState('');
+  const [searchText, setFilterText] = useState('');
   const employeeSort = employees.filter((e) => {
-    if(e.name.first.toLowerCase().includes(filterText.toLowerCase()) ) {
+    if(e.name.first.toLowerCase().includes(searchText.toLowerCase()) ) {
       return true;
     }
-    else if(e.name.last.toLowerCase().includes(filterText.toLowerCase()) ) {
+    else if(e.name.last.toLowerCase().includes(searchText.toLowerCase()) ) {
       return true;
     }
-    else if(e.email.toLowerCase().includes(filterText.toLowerCase()) ) {
+    else if(e.email.toLowerCase().includes(searchText.toLowerCase()) ) {
       return true;
     }
     else {
